@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <nav>
+      <router-link :to="{ 'name': 'page1'}">Page 1- Accessible</router-link>
+      <router-link :to="{ 'name': 'page2'}">Page 2- Accessible</router-link>
+    </nav>
     <router-view/>
+
   </div>
 </template>
 
