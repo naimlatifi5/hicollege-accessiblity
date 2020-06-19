@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="ui container">
     <div class="ui middle aligned center aligned grid">
       <div class="column">
         <h2 class="ui teal image header">
-          <img src="assets/images/logo.png" class="image" />
           <div class="content">
             Log-in to your account
           </div>
