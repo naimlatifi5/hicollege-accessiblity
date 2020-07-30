@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - '13.12.0'
+
+branches:
+only:
+  - master
+
+script:
+  - npm run build
+  - npm run test
+  
+notifications:
+email:
+recipients:
+  - naimlatifi98@hotmail.com
+on_success: always
+on_failure: always
