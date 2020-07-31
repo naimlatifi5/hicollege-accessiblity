@@ -11,8 +11,8 @@ cache:
     - 'node_modules'
 
 script:
-  - npm run build
-  - npm run test
+  - yarn build
+  - yarn test
 
 notifications:
 email:
