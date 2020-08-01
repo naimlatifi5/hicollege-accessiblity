@@ -15,7 +15,7 @@ export default {
   name: 'App',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js PWA'
+      msg: 'Welcome to Your Vue.js PWA-test'
     }
   }
 }
