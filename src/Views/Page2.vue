@@ -1,7 +1,14 @@
 <template>
   <div class="ui container">
     <div class="ui middle aligned center aligned grid">
-      <div class="column">
+      <button>Open modal</button>
+      <div class="ui modal">
+      <div class="header">Header</div>
+      <span>X</span>
+      <div class="image content">
+         
+        <div class="description">
+           <div class="column">
         <h2 class="ui teal image header">
           <div class="content">
             Log-in to your account
@@ -29,6 +36,10 @@
 
         <div class="ui message">New to us? <a href="#">Sign Up</a></div>
       </div>
+        </div>
+      </div>
+    </div>
+    
     </div>
   </div>
 </template>
