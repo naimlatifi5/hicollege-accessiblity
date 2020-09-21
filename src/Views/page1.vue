@@ -14,21 +14,35 @@
         <option value="value3">Apple</option>
         <option value="value2">Orange</option>
     </select>
+    <h2>Checkbox</h2>
+    <input type="checkbox"> Fruit
+    <input type="checkbox"> Banana
     <hr>
-    <h2>Not focusable elements</h2>
+    <label for="checkbox-fruit">
+        <input type="checkbox" name="checkbox-fruit"/>
+    Banana
+    </label>
+    <label for="checkbox-fruit">
+        <input type="checkbox" name="checkbox-fruit"/>
+        Fruit
+    </label>
+    <hr>
+
+    <h2>Radio buttons</h2>
+    <input type="radio" name="item">Item 1
+    <input type="radio" name="item">Item 2
+    <h2>Not focusable elements- are by design</h2>
     <div>
         <h2>Some heading</h2>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et tristique nisi. Vivamus at purus ac sem imperdiet auctor ac eu purus. Vivamus elementum nibh nec nisi lobortis, eget scelerisque ex sagittis. Quisque sollicitudin non dui vel tincidunt. Nullam elit felis, ornare non neque at, tempor porta justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. In nunc nulla, consectetur eu finibus non, finibus et nisl</p>
-        <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="">
     </div>
+    <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
+    <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello">
 </main>
 </template>
 
 <script>
-/**
- * TODOS create an html form without
- */
 export default {
   name: 'Page1'
 }

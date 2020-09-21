@@ -1,52 +1,81 @@
 <template>
   <div class="ui container">
-    <div class="ui middle aligned center aligned grid">
-      <button>Open modal</button>
-      <div class="ui modal">
-      <div class="header">Header</div>
-      <span>X</span>
-      <div class="image content">
-         
-        <div class="description">
-           <div class="column">
-        <h2 class="ui teal image header">
-          <div class="content">
-            Log-in to your account
-          </div>
-        </h2>
-        <form class="ui large form">
-          <div class="ui stacked segment">
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="user icon"></i>
-                <input type="text" name="email" placeholder="E-mail address" />
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="lock icon"></i>
-                <input type="password" name="password" placeholder="Password" />
-              </div>
-            </div>
-            <div class="ui fluid large teal submit button">Login</div>
-          </div>
-
-          <div class="ui error message"></div>
-        </form>
-
-        <div class="ui message">New to us? <a href="#">Sign Up</a></div>
-      </div>
-        </div>
-      </div>
+    <h1>Custom components</h1>
+   <div class="my-button" @click="btnClicked">Hello button</div>
+    <div class="custom-switch">
+      <span>Notify email</span>
+      <button @keyup.enter="firchSwithStatement" @click="firchSwithStatement" :class="swithState">
+        <span>on</span>
+        <span>off</span>
+      </button>
     </div>
-    
+   <hr/>
+    <h2> Accessible custom components </h2>
+    <div tabindex="0" role="my-button" @keyup.enter="btnClicked()" :aria-pressed="pressed" class="my-button" @click="btnClicked" aria-label="custom button">
+      <span aria-hidden="true">hej</span>
+      <span class="visually-hidden">play</span>
+    </div>
+   <div class="custom-switch">
+      <span id="notify-by-email">Notify email</span>
+      <button role="switch" :aria-checked="this.switch.toString()" @keyup.enter="checkedButton" aria-labelledby="notify-by-email">
+        <span>on</span>
+        <span>off</span>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Page2'}
+  name: 'Page2',
+  data () {
+    return {
+      pressed: false,
+      switch: false,
+      switch1: false
+    }
+  },
+  computed: {
+    swithState () {
+      return this.switch1 ? 'item' : null
+    }
+  },
+  methods: {
+    btnClicked () {
+      alert('Button clicked')
+      this.pressed = true
+    },
+    firchSwithStatement () {
+      this.switch = !this.switch
+    },
+    checkedButton () {
+      this.switch = !this.switch
+    }
+  }
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.my-button {
+  background-color: red;
+  padding: 10px;
+  color: white;
+  max-width: 200px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  padding: 0;
+}
+[role='switch'][aria-checked='true'] :first-child,
+[role='switch'][aria-checked='false'] :last-child {
+  background-color: #000;
+  color: "white"
+}
+</style>

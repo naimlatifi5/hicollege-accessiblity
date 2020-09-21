@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <router-link :to="{ name: 'page1' }">Focusable elements</router-link>
-      <router-link :to="{ name: 'page2' }">Page 2- Accessible</router-link>
+      <router-link :to="{ name: 'page1' }">Native elements</router-link>
+      <router-link :to="{ name: 'page2' }">Custom components</router-link>
       <router-link :to="{ name: 'page3' }">Page 3- Accessible</router-link>
     </nav>
     <router-view />
