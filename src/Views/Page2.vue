@@ -4,22 +4,23 @@
    <div class="my-button" @click="btnClicked">Hello button</div>
     <div class="custom-switch">
       <span>Notify email</span>
-      <button @keyup.enter="firchSwithStatement" @click="firchSwithStatement" :class="swithState">
-        <span>on</span>
+      <button @keyup.enter="firchSwithStatement" @click="firchSwithStatement" :class="swithState1">
         <span>off</span>
+        <span>on</span>
       </button>
     </div>
    <hr/>
     <h2> Accessible custom components </h2>
     <div tabindex="0" role="my-button" @keyup.enter="btnClicked()" :aria-pressed="pressed" class="my-button" @click="btnClicked" aria-label="custom button">
-      <span aria-hidden="true">hej</span>
+      <span aria-hidden="true">Accessible button</span>
       <span class="visually-hidden">play</span>
     </div>
    <div class="custom-switch">
       <span id="notify-by-email">Notify email</span>
-      <button role="switch" :aria-checked="this.switch.toString()" @keyup.enter="checkedButton" aria-labelledby="notify-by-email">
-        <span>on</span>
+
+      <button role="switch" :aria-checked="switch1.toString()" @click.prevent="checkedButtonOnClick" @keyup.enter="checkedButtonOnEnter" aria-labelledby="notify-by-email">
         <span>off</span>
+        <span>on</span>
       </button>
     </div>
   </div>
@@ -37,7 +38,15 @@ export default {
   },
   computed: {
     swithState () {
-      return this.switch1 ? 'item' : null
+      return this.switch1 ? 'checkbox-on-switch1' : 'checkbox-off-switch1'
+    },
+    swithState1 () {
+      return this.switch ? 'checkbox-on' : 'checkbox-off'
+    }
+  },
+  watch: {
+    switch1 (val) {
+      this.checkedButtonOnEnter(val)
     }
   },
   methods: {
@@ -48,8 +57,11 @@ export default {
     firchSwithStatement () {
       this.switch = !this.switch
     },
-    checkedButton () {
-      this.switch = !this.switch
+    checkedButtonOnClick () {
+      this.switch1 = !this.switch1
+    },
+    checkedButtonOnEnter (val) {
+      this.switch1 = !val
     }
   }
 }
@@ -75,7 +87,16 @@ export default {
 }
 [role='switch'][aria-checked='true'] :first-child,
 [role='switch'][aria-checked='false'] :last-child {
-  background-color: #000;
-  color: "white"
+  background-color: yellow;
+  padding: 3px;
+}
+.checkbox-on,
+.checkbox-on-switch1 {
+  span {
+    &:last-child {
+      background-color: yellow;
+      padding: 2px;
+    }
+  }
 }
 </style>
