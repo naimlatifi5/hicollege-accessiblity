@@ -2,8 +2,8 @@
   <div id="app">
     <nav>
       <router-link :to="{ name: 'page1' }">Native elements</router-link>
-      <router-link :to="{ name: 'page2' }">Custom components</router-link>
-      <router-link :to="{ name: 'page3' }">Page 3- Accessible</router-link>
+      <router-link :to="{ name: 'page2' }">Inaccessible components</router-link>
+      <router-link :to="{ name: 'page3' }">Accessible components</router-link>
     </nav>
     <router-view />
   </div>

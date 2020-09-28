@@ -4,25 +4,32 @@
    <div class="my-button" @click="btnClicked">Hello button</div>
     <div class="custom-switch">
       <span>Notify email</span>
-      <button @keyup.enter="firchSwithStatement" @click="firchSwithStatement" :class="swithState1">
+      <button @click="firchSwithStatement" :class="swithState1">
         <span>off</span>
         <span>on</span>
       </button>
     </div>
+    <br/>
+       <div class="ui form">
+      <div class="field">
+        <label>Email: </label>
+        <input type="text" id="email" placeholder="enter your email" />
+     </div>
+     <div class="field">
+       <label>Password: </label>
+       <input type="password" id="password" placeholder="enter your password" />
+     </div>
+     <div class="field">
+       <label>User Type: </label>
+       <select name="user_type" value="">
+         <option disabled value="">Choose user type</option>
+         <option value="admin">Admin</option>
+         <option value="user">User</option>
+       </select>
+     </div>
+     <button class="ui primary button">Submit</button>
+  </div>
    <hr/>
-    <h2> Accessible custom components </h2>
-    <div tabindex="0" role="my-button" @keyup.enter="btnClicked()" :aria-pressed="pressed" class="my-button" @click="btnClicked" aria-label="custom button">
-      <span aria-hidden="true">Accessible button</span>
-      <span class="visually-hidden">play</span>
-    </div>
-   <div class="custom-switch">
-      <span id="notify-by-email">Notify email</span>
-
-      <button role="switch" :aria-checked="switch1.toString()" @click.prevent="checkedButtonOnClick" @keyup.enter="checkedButtonOnEnter" aria-labelledby="notify-by-email">
-        <span>off</span>
-        <span>on</span>
-      </button>
-    </div>
   </div>
 </template>
 
@@ -44,11 +51,6 @@ export default {
       return this.switch ? 'checkbox-on' : 'checkbox-off'
     }
   },
-  watch: {
-    switch1 (val) {
-      this.checkedButtonOnEnter(val)
-    }
-  },
   methods: {
     btnClicked () {
       alert('Button clicked')
@@ -56,12 +58,6 @@ export default {
     },
     firchSwithStatement () {
       this.switch = !this.switch
-    },
-    checkedButtonOnClick () {
-      this.switch1 = !this.switch1
-    },
-    checkedButtonOnEnter (val) {
-      this.switch1 = !val
     }
   }
 }
@@ -98,5 +94,9 @@ export default {
       padding: 2px;
     }
   }
+}
+.form {
+  max-width: 500px;
+  margin: 0 auto;
 }
 </style>
