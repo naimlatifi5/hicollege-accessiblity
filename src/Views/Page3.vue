@@ -32,6 +32,18 @@
        </select>
      </div>
      <button class="ui primary button">Submit</button>
+     <ul role="navigation">
+       <li><a href="/">Home</a></li>
+       <li><a href="/">About us</a></li>
+     </ul>
+     <div class="ui checkbox">
+      <input type="checkbox" class="hidden">
+      <label>Fruit</label>
+    </div>
+    <div class="ui checkbox">
+      <input type="checkbox" class="hidden">
+      <label>Meal</label>
+    </div>
    </form>
   </div>
 </template>

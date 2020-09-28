@@ -29,7 +29,16 @@
      </div>
      <button class="ui primary button">Submit</button>
   </div>
-   <hr/>
+  <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About us</a></li>
+  </ul>
+    <div class="ui checkbox">
+      <label>Fruit</label>
+    </div>
+    <div class="ui checkbox">
+      <label>Meal</label>
+    </div>
   </div>
 </template>
 
