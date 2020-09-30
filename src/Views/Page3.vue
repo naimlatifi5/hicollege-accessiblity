@@ -1,10 +1,13 @@
 <template>
   <div class="ui container">
    <h2> Accessible custom components </h2>
+     <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
+    <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello" />
+    <br/>
     <div tabindex="0" role="my-button" class="my-button" @click="btnClicked" aria-label="custom button">
       <span aria-hidden="true">Accessible button</span>
-      <span class="visually-hidden">play</span>
     </div>
+
     <br/>
    <div class="custom-switch">
       <span id="notify-by-email">Notify email</span>
@@ -32,6 +35,7 @@
        </select>
      </div>
      <button class="ui primary button">Submit</button>
+     <br>
      <ul role="navigation">
        <li><a href="/">Home</a></li>
        <li><a href="/">About us</a></li>
@@ -45,10 +49,14 @@
       <label>Meal</label>
     </div>
    </form>
+   <br/>
+   <hr>
+   <to-do-list></to-do-list>
   </div>
 </template>
 
 <script>
+import toDoList from '../components/todoList.vue'
 export default {
   name: 'Page3',
   data () {
@@ -65,6 +73,9 @@ export default {
     switch (val) {
       this.checkedButtonOnEnter(val)
     }
+  },
+  components: {
+    toDoList
   },
   methods: {
     btnClicked () {
@@ -106,6 +117,15 @@ export default {
   }
 }
 .form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.ui.form {
   max-width: 500px;
   margin: 0 auto;
 }

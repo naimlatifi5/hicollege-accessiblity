@@ -1,7 +1,11 @@
 <template>
   <div class="ui container">
     <h1>Custom components</h1>
+      <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
+    <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" />
+    <br/>
    <div class="my-button" @click="btnClicked">Hello button</div>
+   <br/>
     <div class="custom-switch">
       <span>Notify email</span>
       <button @click="firchSwithStatement" :class="swithState1">
@@ -29,6 +33,7 @@
      </div>
      <button class="ui primary button">Submit</button>
   </div>
+  <br>
   <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/">About us</a></li>
@@ -39,10 +44,12 @@
     <div class="ui checkbox">
       <label>Meal</label>
     </div>
+    <to-do-list-not-accessible></to-do-list-not-accessible>
   </div>
 </template>
 
 <script>
+import toDoListNotAccessible from '../components/todoList.vue'
 export default {
   name: 'Page2',
   data () {
@@ -51,6 +58,9 @@ export default {
       switch: false,
       switch1: false
     }
+  },
+  components: {
+    toDoListNotAccessible
   },
   computed: {
     swithState () {
@@ -107,5 +117,10 @@ export default {
 .form {
   max-width: 500px;
   margin: 0 auto;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 </style>
