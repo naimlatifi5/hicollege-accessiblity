@@ -36,22 +36,41 @@
      </div>
      <button class="ui primary button">Submit</button>
      <br>
+     <!-- USING HTML 5 -->
+     <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About us</a></li>
+      </ul>
+     </nav>
+     <!-- Using roles -->
      <ul role="navigation">
        <li><a href="/">Home</a></li>
        <li><a href="/">About us</a></li>
      </ul>
-     <div class="ui checkbox">
-      <input type="checkbox" class="hidden">
-      <label>Fruit</label>
+    <div class="checkbox-wrapper">
+      <h2>Custom checkboxes</h2>
+      <div class="checkbox" tabindex="0" role="checkbox" aria-checked="true" checked aria-labelledby="fruit">
+        <span id="fruit">Fruit</span>
+      </div>
     </div>
-    <div class="ui checkbox">
-      <input type="checkbox" class="hidden">
-      <label>Meal</label>
-    </div>
+    <br/>
+    <div class="error" tabindex="0" role="alert">Cannot connect to internet</div>
    </form>
    <br/>
    <hr>
    <to-do-list></to-do-list>
+   <br/>
+   <br/>
+   <div id="currentValue">Current value {{ value }}</div>
+   <div class="calc" aria-describedby="help" tabindex="0" aria-labelledby="currentValue" >
+     <span aria-live="assertive">{{value}}</span>
+     <button tabindex="-1" title="increment by 1" aria-controls="number" @click="increment">Increment</button>
+     <button tabindex="-1" title="decrement by 1" aria-controls="number" @click="decrement">Decrement</button>
+   </div>
+   <div id="help">
+     Use increment and decrement button to increment/decrement a number
+   </div>
   </div>
 </template>
 
@@ -61,7 +80,8 @@ export default {
   name: 'Page3',
   data () {
     return {
-      switch: false
+      switch: false,
+      value: 0
     }
   },
   computed: {
@@ -87,6 +107,12 @@ export default {
     },
     checkedButtonOnEnter (val) {
       this.switch = !val
+    },
+    increment () {
+      this.value++
+    },
+    decrement () {
+      this.value--
     }
   }
 }
@@ -107,8 +133,7 @@ export default {
   background-color: yellow;
   padding: 3px;
 }
-.checkbox-on,
-.checkbox-on-switch1 {
+.checkbox-on {
   span {
     &:last-child {
       background-color: yellow;
@@ -128,5 +153,60 @@ ul {
 .ui.form {
   max-width: 500px;
   margin: 0 auto;
+}
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkboxes {
+  list-style: none;
+}
+
+.checkbox {
+  position: relative;
+  padding-left: 22px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkbox::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.checkbox:focus::before {
+  outline: #2196F3 auto 5px;
+}
+
+.checkbox[checked]::after {
+  content: '';
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAaElEQVR4Xl3PIQoCQQCF4Y8JW42D1bDZ4iVEjDbxFpstYhC7eIVBZHkXFGw734sv/TqDQQ8Xb1udja/I8igeIm7Aygj2IpoKTGZnVRNxAHYi4iPiDlA9xX+aNQDFySziqDN6uSp6y7ofEMwZ05uUZRkAAAAASUVORK5CYII=);
+  background-size: 100% 100%;
+  display: block;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+.error {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
 }
 </style>

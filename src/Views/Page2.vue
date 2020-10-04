@@ -8,7 +8,7 @@
    <br/>
     <div class="custom-switch">
       <span>Notify email</span>
-      <button @click="firchSwithStatement" :class="swithState1">
+      <button @click="firchSwithStatement" :class="swithState">
         <span>off</span>
         <span>on</span>
       </button>
@@ -38,11 +38,11 @@
       <li><a href="/">Home</a></li>
       <li><a href="/">About us</a></li>
   </ul>
-    <div class="ui checkbox">
-      <label>Fruit</label>
-    </div>
-    <div class="ui checkbox">
-      <label>Meal</label>
+    <div class="checkbox-wrapper">
+      <h2>Custom checkboxes</h2>
+      <div class="checkbox" tabindex="0" :class="{'checked': checked}" @click="clickedCheckbox">
+        Fruit
+      </div>
     </div>
     <to-do-list-not-accessible></to-do-list-not-accessible>
   </div>
@@ -54,9 +54,9 @@ export default {
   name: 'Page2',
   data () {
     return {
-      pressed: false,
       switch: false,
-      switch1: false
+      checked: false,
+      checked1: false
     }
   },
   components: {
@@ -64,19 +64,18 @@ export default {
   },
   computed: {
     swithState () {
-      return this.switch1 ? 'checkbox-on-switch1' : 'checkbox-off-switch1'
-    },
-    swithState1 () {
       return this.switch ? 'checkbox-on' : 'checkbox-off'
     }
   },
   methods: {
     btnClicked () {
       alert('Button clicked')
-      this.pressed = true
     },
     firchSwithStatement () {
       this.switch = !this.switch
+    },
+    clickedCheckbox () {
+      this.checked = !this.checked
     }
   }
 }
@@ -122,5 +121,56 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkboxes {
+  list-style: none;
+}
+
+.checkbox {
+  position: relative;
+  padding-left: 22px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkbox::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.checkbox:focus::before {
+  outline: #2196F3 auto 5px;
+}
+
+.checkbox[checked]::after,
+.checkbox.checked::after,
+.checkbox.checked1::after  {
+  content: '';
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAaElEQVR4Xl3PIQoCQQCF4Y8JW42D1bDZ4iVEjDbxFpstYhC7eIVBZHkXFGw734sv/TqDQQ8Xb1udja/I8igeIm7Aygj2IpoKTGZnVRNxAHYi4iPiDlA9xX+aNQDFySziqDN6uSp6y7ofEMwZ05uUZRkAAAAASUVORK5CYII=);
+  background-size: 100% 100%;
+  display: block;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 </style>
