@@ -1,13 +1,14 @@
 <template>
   <div class="ui container">
-   <h2> Accessible custom components </h2>
-     <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
-    <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello" />
-    <br/>
-    <div tabindex="0" role="my-button" class="my-button" @click="btnClicked" aria-label="custom button">
-      <span aria-hidden="true">Accessible button</span>
-    </div>
-
+    <header>
+        <h1> Accessible custom components </h1>
+   </header>
+   <main>
+      <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello" />
+      <br/>
+      <div tabindex="0" role="my-button" class="my-button" @click="btnClicked" aria-label="custom button">
+        <span aria-hidden="true">Accessible button</span>
+      </div>
     <br/>
    <div class="custom-switch">
       <span id="notify-by-email">Notify email</span>
@@ -71,6 +72,7 @@
    <div id="help">
      Use increment and decrement button to increment/decrement a number
    </div>
+   </main>
   </div>
 </template>
 
