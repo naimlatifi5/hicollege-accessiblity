@@ -4,9 +4,9 @@
     <input type="text"/>
     <hr>
     <h1>Button element</h1>
-    <button type="text">Button 1 position as first</button>
-    <button type="text">Button 2 focus in element order in DOM</button>
-    <button type="text">Button 3 position as third</button>
+    <button type="button">Button 1 position as first</button>
+    <button type="button">Button 2 focus in element order in DOM</button>
+    <button type="button">Button 3 position as third</button>
     <h1>Select dropddown</h1>
     <select>
         <option value="value1">Fruit</option>
@@ -19,11 +19,11 @@
     <input type="checkbox"> Banana
     <hr>
     <label for="checkbox-fruit">
-        <input type="checkbox" name="checkbox-fruit"/>
+        <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit"/>
     Banana
     </label>
-    <label for="checkbox-fruit">
-        <input type="checkbox" name="checkbox-fruit"/>
+    <label for="checkbox-fruit1">
+        <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit1" />
         Fruit
     </label>
     <hr>

@@ -6,7 +6,7 @@
    <main>
       <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello" />
       <br/>
-      <div tabindex="0" role="my-button" class="my-button" @click="btnClicked" aria-label="custom button">
+      <div tabindex="0" role="button" class="my-button" @click="btnClicked" aria-label="custom button">
         <span aria-hidden="true">Accessible button</span>
       </div>
     <br/>
@@ -122,9 +122,9 @@ export default {
 
 <style lang="scss">
 .my-button {
-  background-color: red;
+  background-color: #78c043;
   padding: 10px;
-  color: white;
+  color: #ffffff;
   max-width: 200px;
   margin: 0 auto;
   cursor: pointer;
@@ -207,7 +207,7 @@ ul {
 }
 .error {
   padding: 10px;
-  background-color: red;
+  background-color: #78c043;
   color: white;
   border-radius: 3px;
 }
