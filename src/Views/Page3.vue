@@ -12,7 +12,7 @@
     <br/>
    <div class="custom-switch">
       <span id="notify-by-email">Notify email</span>
-      <button role="switch" :class="swithState" :aria-checked="this.switch.toString()" @click.prevent="checkedButtonOnClick" @keyup.enter="checkedButtonOnEnter" aria-labelledby="notify-by-email">
+      <button role="switch" :class="swithState" :aria-checked="this.switch.toString()" @click.prevent="checkedButtonOnClick" aria-labelledby="notify-by-email">
         <span>off</span>
         <span>on</span>
       </button>
