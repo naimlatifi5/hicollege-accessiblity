@@ -10,13 +10,6 @@
         <span aria-hidden="true">Accessible button</span>
       </div>
     <br/>
-   <div class="custom-switch">
-      <span id="notify-by-email">Notify email</span>
-      <button role="switch" :class="swithState" :aria-checked="this.switch.toString()" @click.prevent="checkedButtonOnClick" aria-labelledby="notify-by-email">
-        <span>off</span>
-        <span>on</span>
-      </button>
-    </div>
     <h3>Forms</h3>
      <form class="ui form">
       <div class="field">
@@ -65,7 +58,6 @@
    <br/>
    <div id="currentValue">Current value {{ value }}</div>
    <div class="calc" aria-describedby="help" tabindex="0" aria-labelledby="currentValue" >
-     <span aria-live="assertive">{{value}}</span>
      <button tabindex="-1" title="increment by 1" aria-controls="number" @click="increment">Increment</button>
      <button tabindex="-1" title="decrement by 1" aria-controls="number" @click="decrement">Decrement</button>
    </div>
@@ -86,16 +78,6 @@ export default {
       value: 0
     }
   },
-  computed: {
-    swithState () {
-      return this.switch ? 'checkbox-on' : 'checkbox-off'
-    }
-  },
-  watch: {
-    switch (val) {
-      this.checkedButtonOnEnter(val)
-    }
-  },
   components: {
     toDoList
   },
@@ -103,12 +85,6 @@ export default {
     btnClicked () {
       alert('Button clicked')
       this.pressed = true
-    },
-    checkedButtonOnClick () {
-      this.switch = !this.switch
-    },
-    checkedButtonOnEnter (val) {
-      this.switch = !val
     },
     increment () {
       this.value++
