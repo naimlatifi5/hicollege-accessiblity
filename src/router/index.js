@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Page1 from '../Views/Page1'
 import Page2 from '../Views/Page2'
 import Page3 from '../Views/Page3'
+import Modal from '../Views/Page4'
 
 Vue.use(Router)
 
@@ -22,7 +23,11 @@ export default new Router({
       path: '/page3',
       name: 'page3',
       component: Page3
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: Modal
     }
-
   ]
 })
