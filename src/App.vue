@@ -7,6 +7,8 @@
        <router-link :to="{ name: 'modal' }">Modal</router-link>
     </nav>
     <router-view />
+    <portal-target name="modal">
+    </portal-target>
   </div>
 </template>
 

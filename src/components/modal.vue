@@ -1,44 +1,70 @@
 <template>
-  <div class="base-modal-frame-wrapper" v-if="active">
-    <div
-      class="base-modal-frame"
-      :class="[modalWithFooter]"
-      @click.self="handleClose"
-    >
+  <portal to="modal">
+    <div class="base-modal-frame-wrapper" v-if="active">
       <div
-        role="dialog"
-        class="base-modal-frame__container"
-        :style="{ 'background-color': bgColor }"
+        class="base-modal-frame"
+        :class="[modalWithFooter]"
+        @click.self="handleClose"
       >
-        <header class="base-modal-frame__header" :class="hasIcon">
-          <h2 class="base-modal-frame__headline">{{ title }}</h2>
-          <button
-            class="base-modal-frame__close-button"
-            aria-label="Stäng modal"
-            data-test="close-button"
-            @click="handleClose"
-          >X</button>
-        </header>
-        <div class="base-modal-frame__content">
-          <slot name="content"></slot>
-        </div>
-
-        <footer
-          v-if="hasFooterSlot"
+        <div
+          class="base-modal-frame__container"
           :style="{ 'background-color': bgColor }"
-          class="base-modal-frame__footer"
         >
-          <slot name="footer"></slot>
-        </footer>
+          <header class="base-modal-frame__header" :class="hasIcon">
+            <h2 class="base-modal-frame__headline">{{ title }}</h2>
+            <button class="base-modal-frame__close-button" @click="handleClose">
+              X
+            </button>
+          </header>
+          <div class="base-modal-frame__content">
+             <p>
+              nim posuere eget. Donec non eros nec justo dapibus placerat eu at sapien.
+              </p>
+              <br/>
+              <p>
+            <div class="dialog_form_item">
+              <label>
+                <span class="label_text">
+                  Name:
+                </span>
+                <input type="text" class="name_input" />
+              </label>
+            </div>
+            <br/>
+            <div class="dialog_form_item">
+              <label>
+                <span class="label_text">
+                  City:
+                </span>
+                <input
+                  type="text"
+                  class="city"
+                />
+              </label>
+            </div>
+            <br/>
+            <div class="dialog_form_item">
+              <label>
+                <span class="label_text">
+                  State:
+                </span>
+                <input type="text" class="state_input" />
+              </label>
+            </div>
+          </div>
+          <footer
+            :style="{ 'background-color': bgColor }"
+            class="base-modal-frame__footer"
+          >
+            <button type="button" @click="handleClose">Close</button>
+          </footer>
+        </div>
       </div>
+      <transition name="fadeIn">
+        <div v-if="hasOverlay" class="base-modal-frame__overlay" />
+      </transition>
     </div>
-    <transition name="fadeIn">
-      <div
-        v-if="hasOverlay"
-        class="base-modal-frame__overlay"
-      />
-    </transition>
-  </div>
+  </portal>
 </template>
 
 <script>
@@ -72,23 +98,9 @@ export default {
       return this.hasFooterSlot ? 'base-modal-frame--with-footer' : null
     }
   },
-  mounted () {
-    this.handleCloseOnESC()
-    document.body.classList.add('modal-open')
-  },
-  destroyed () {
-    document.body.classList.remove('modal-open')
-  },
   methods: {
     handleClose () {
       this.$emit('onClose')
-    },
-    handleCloseOnESC () {
-      document.addEventListener('keydown', e => {
-        if (e.keyCode === 27) {
-          this.handleClose()
-        }
-      })
     }
   }
 }
@@ -143,6 +155,7 @@ body {
   &__content {
     overflow-y: auto;
     margin: 0;
+    height: 250px;
   }
   &__headline {
     font-size: 36px;

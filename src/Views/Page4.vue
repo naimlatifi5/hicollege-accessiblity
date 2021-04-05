@@ -18,40 +18,35 @@
   <button type="button" @click="openModal">Open modal</button>
 
   <button type="button" @click="openModalAccessible">Open accessible modal</button>
-
+   <div class="dialog_form_item">
+      <label>
+        <span class="label_text">
+          City:
+        </span>
+        <input type="text" class="city_input_input">
+      </label>
+    </div>
   <Modal v-if="active" title="Cookie modal" @onClose="handleClose">
-   <template #content>
-    <p>
-     nim posuere eget. Donec non eros nec justo dapibus placerat eu at sapien.
-    </p>
-    <br/>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt aliquet placerat. Donec et tellus consectetur nisi congue hendrerit vitae non est. Phasellus pharetra ligula quis erat tincidunt consequat non non odio.</p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt aliquet placerat. Donec et tellus consectetur nisi congue hendrerit vitae non est. Phasellus pharetra ligula quis erat tincidunt consequat non non odio.</p>
-   </template>
   </Modal>
-  <Modal v-if="active2" title="Cookie modal 2" @onClose="handleClose">
+  <ModalAccessible v-if="active2" title="Cookie modal 2" @onClose="handleClose">
    <template #content>
-    <p>
-     nim posuere eget. Donec non eros nec justo dapibus placerat eu at sapien.
-    </p>
-    <br/>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt aliquet placerat. Donec et tellus consectetur nisi congue hendrerit vitae non est. Phasellus pharetra ligula quis erat tincidunt consequat non non odio.</p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt aliquet placerat. Donec et tellus consectetur nisi congue hendrerit vitae non est. Phasellus pharetra ligula quis erat tincidunt consequat non non odio.</p>
+
    </template>
-  </Modal>
+   <template #footer>
+
+   </template>
+  </ModalAccessible>
   </div>
 </template>
 
 <script>
 import Modal from '../components/modal.vue'
+import ModalAccessible from '../components/accessibleModal'
 export default {
   name: 'Page4',
   components: {
-    Modal
+    Modal,
+    ModalAccessible
   },
   data () {
     return {
@@ -62,10 +57,10 @@ export default {
   methods: {
     openModal () {
       this.active = true
-   
     },
-    openModalAccessible() {
-    this.active2 = true
+    openModalAccessible () {
+      this.active2 = true
+      console.log('item', document.querySelector('.city'))
     },
     handleClose () {
       this.active = false

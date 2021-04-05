@@ -1,44 +1,95 @@
 <template>
-  <div class="base-modal-frame-wrapper" v-if="active">
-    <div
-      class="base-modal-frame"
-      :class="[modalWithFooter]"
-      @click.self="handleClose"
-    >
+  <portal to="modal">
+    <div class="base-modal-frame-wrapper" v-if="active">
       <div
-        role="dialog"
-        class="base-modal-frame__container"
-        :style="{ 'background-color': bgColor }"
+        class="base-modal-frame"
+        :class="[modalWithFooter]"
+        @click.self="handleClose"
       >
-        <header class="base-modal-frame__header" :class="hasIcon">
-          <h2 class="base-modal-frame__headline">{{ title }}</h2>
-          <button
-            class="base-modal-frame__close-button"
-            aria-label="Stäng modal"
-            data-test="close-button"
-            @click="handleClose"
-          >X</button>
-        </header>
-        <div class="base-modal-frame__content">
-          <slot name="content"></slot>
-        </div>
-
-        <footer
-          v-if="hasFooterSlot"
-          :style="{ 'background-color': bgColor }"
-          class="base-modal-frame__footer"
+        <div
+          role="dialog"
+          aria-labelledby="modalTitle"
+          aria-describedby="modalContent"
+          class="base-modal-frame__container"
         >
-          <slot name="footer"></slot>
-        </footer>
+          <header class="base-modal-frame__header" :class="hasIcon">
+            <h2 id="modalTitle" class="base-modal-frame__headline">
+              {{ title }}
+            </h2>
+            <button
+              class="base-modal-frame__close-button"
+              aria-label="Close modal"
+              @click="handleClose"
+              ref="closeBtn"
+              @keydown.shift.tab.prevent=""
+            >
+              X
+            </button>
+          </header>
+          <div class="base-modal-frame__content" id="modalContent">
+            <p>
+              We should be able to open & close the modal just using the
+              keyboard.
+            </p>
+            <p>
+              Trap the focus in the modal: since the modal is an inert
+              component, the keyboard navigation should be trapped inside of it
+              once it’s open.
+            </p>
+            <h3>Fill the form</h3>
+            <div class="dialog_form_item">
+              <label for="name">
+                <span class="label_text">
+                  Name
+                </span>
+                <input type="text" id="name" class="name" />
+              </label>
+            </div>
+            <br />
+            <div class="dialog_form_item">
+              <label for="city">
+                <span class="label_text">
+                  City:
+                </span>
+                <input type="text" id="city" class="city" />
+              </label>
+            </div>
+            <br />
+            <div class="dialog_form_item">
+              <label for="state">
+                <span class="label_text">
+                  State:
+                </span>
+                <input type="text" id="state" class="state_input" />
+              </label>
+            </div>
+            <br />
+            <div class="dialog_form_item">
+              jdasf
+              <label for="zip">
+                <span class="label_text">
+                  Zip:
+                </span>
+                <input id="zip" type="text" class="zip_input" />
+              </label>
+            </div>
+          </div>
+          <footer class="base-modal-frame__footer">
+            <button
+              type="button"
+              @click="handleClose"
+              @keydown.tab.exact.prevent=""
+            >
+              Close
+            </button>
+          </footer>
+        </div>
       </div>
+      <transition name="fadeIn">
+        <div v-if="hasOverlay" class="base-modal-frame__overlay" />
+      </transition>
     </div>
-    <transition name="fadeIn">
-      <div
-        v-if="hasOverlay"
-        class="base-modal-frame__overlay"
-      />
-    </transition>
-  </div>
+  </portal>
 </template>
 
 <script>
@@ -75,6 +126,9 @@ export default {
   mounted () {
     this.handleCloseOnESC()
     document.body.classList.add('modal-open')
+    this.$nextTick(() => {
+      this.$refs.closeBtn.focus()
+    })
   },
   destroyed () {
     document.body.classList.remove('modal-open')

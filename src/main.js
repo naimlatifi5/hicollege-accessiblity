@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import PortalVue from 'portal-vue'
+Vue.use(PortalVue)
 
 Vue.config.productionTip = false
 
