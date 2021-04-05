@@ -155,7 +155,7 @@ body {
   &__content {
     overflow-y: auto;
     margin: 0;
-    height: 250px;
+    min-height: 250px;
   }
   &__headline {
     font-size: 36px;

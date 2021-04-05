@@ -8,6 +8,7 @@
       >
         <div
           role="dialog"
+          tabindex="0"
           aria-labelledby="modalTitle"
           aria-describedby="modalContent"
           class="base-modal-frame__container"
@@ -61,16 +62,6 @@
                   State:
                 </span>
                 <input type="text" id="state" class="state_input" />
-              </label>
-            </div>
-            <br />
-            <div class="dialog_form_item">
-              jdasf
-              <label for="zip">
-                <span class="label_text">
-                  Zip:
-                </span>
-                <input id="zip" type="text" class="zip_input" />
               </label>
             </div>
           </div>
@@ -197,6 +188,7 @@ body {
   &__content {
     overflow-y: auto;
     margin: 0;
+    min-height: 280px;
   }
   &__headline {
     font-size: 36px;
