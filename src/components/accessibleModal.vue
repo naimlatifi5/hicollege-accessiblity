@@ -3,7 +3,6 @@
     <div class="base-modal-frame-wrapper" v-if="active">
       <div
         class="base-modal-frame"
-        :class="[modalWithFooter]"
         @click.self="handleClose"
       >
         <div
@@ -13,7 +12,7 @@
           aria-describedby="modalContent"
           class="base-modal-frame__container"
         >
-          <header class="base-modal-frame__header" :class="hasIcon">
+          <header class="base-modal-frame__header">
             <h2 id="modalTitle" class="base-modal-frame__headline">
               {{ title }}
             </h2>
@@ -99,19 +98,6 @@ export default {
   data () {
     return {
       active: true
-    }
-  },
-  computed: {
-    hasFooterSlot () {
-      return !!this.$slots['footer']
-    },
-    hasIcon () {
-      return this.iconName && this.iconName !== ''
-        ? 'base-modal-frame--has-icon'
-        : null
-    },
-    modalWithFooter () {
-      return this.hasFooterSlot ? 'base-modal-frame--with-footer' : null
     }
   },
   mounted () {

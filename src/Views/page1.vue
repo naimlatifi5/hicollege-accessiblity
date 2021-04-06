@@ -1,5 +1,5 @@
 <template>
-<main>
+<main class="main">
     <h1>Input element</h1>
     <input type="text"/>
     <hr>
@@ -45,3 +45,10 @@ export default {
   name: 'Page1'
 }
 </script>
+<style lang="scss" scoped>
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+</style>

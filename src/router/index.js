@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import Page1 from '../Views/Page1'
 import Page2 from '../Views/Page2'
 import Page3 from '../Views/Page3'
-import Modal from '../Views/Page4'
+import InacessibleModal from '../Views/Page4'
+import Accordions from '../Views/Page5'
+import AcessibleModal from '../Views/Page6'
 
 Vue.use(Router)
 
@@ -25,9 +27,19 @@ export default new Router({
       component: Page3
     },
     {
-      path: '/modal',
-      name: 'modal',
-      component: Modal
+      path: '/modal-inaccessible',
+      name: 'modal-inaccessible',
+      component: InacessibleModal
+    },
+    {
+      path: '/modal-accessible',
+      name: 'modal-accessible',
+      component: AcessibleModal
+    },
+    {
+      path: '/accordions',
+      name: 'accordions',
+      component: Accordions
     }
   ]
 })

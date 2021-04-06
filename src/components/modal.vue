@@ -3,14 +3,12 @@
     <div class="base-modal-frame-wrapper" v-if="active">
       <div
         class="base-modal-frame"
-        :class="[modalWithFooter]"
         @click.self="handleClose"
       >
         <div
           class="base-modal-frame__container"
-          :style="{ 'background-color': bgColor }"
         >
-          <header class="base-modal-frame__header" :class="hasIcon">
+          <header class="base-modal-frame__header">
             <h2 class="base-modal-frame__headline">{{ title }}</h2>
             <button class="base-modal-frame__close-button" @click="handleClose">
               X
@@ -53,7 +51,6 @@
             </div>
           </div>
           <footer
-            :style="{ 'background-color': bgColor }"
             class="base-modal-frame__footer"
           >
             <button type="button" @click="handleClose">Close</button>
@@ -83,19 +80,6 @@ export default {
   data () {
     return {
       active: true
-    }
-  },
-  computed: {
-    hasFooterSlot () {
-      return !!this.$slots['footer']
-    },
-    hasIcon () {
-      return this.iconName && this.iconName !== ''
-        ? 'base-modal-frame--has-icon'
-        : null
-    },
-    modalWithFooter () {
-      return this.hasFooterSlot ? 'base-modal-frame--with-footer' : null
     }
   },
   methods: {

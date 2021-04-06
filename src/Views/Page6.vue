@@ -27,7 +27,6 @@
     </div>
     <br/>
     <button type="button">This is a simple button</button>
-
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
       tincidunt aliquet placerat. Donec et tellus consectetur nisi congue
@@ -51,10 +50,8 @@
     </p>
     <br />
     <br />
-
-    <Modal v-if="active" title="Cookie modal" @onClose="handleClose" />
     <ModalAccessible
-      v-if="active2"
+      v-if="active"
       title="Cookie modal 2"
       @onClose="handleClose"
     />
@@ -62,33 +59,23 @@
 </template>
 
 <script>
-import Modal from '../components/modal.vue'
 import ModalAccessible from '../components/accessibleModal'
 export default {
   name: 'Page4',
   components: {
-    Modal,
     ModalAccessible
   },
   data () {
     return {
-      active: false,
-      active2: false
+      active: false
     }
   },
   mounted () {
     this.active = true
   },
   methods: {
-    openModal () {
-      this.active = true
-    },
-    openModalAccessible () {
-      this.active2 = true
-    },
     handleClose () {
       this.active = false
-      this.active2 = false
     }
   }
 }

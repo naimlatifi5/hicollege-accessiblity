@@ -4,7 +4,9 @@
       <router-link :to="{ name: 'page1' }">Native elements</router-link>
       <router-link :to="{ name: 'page2' }">Inaccessible components</router-link>
       <router-link :to="{ name: 'page3' }">Accessible components</router-link>
-       <router-link :to="{ name: 'modal' }">Modal</router-link>
+      <router-link :to="{ name: 'modal-inaccessible' }">Inaccessible modals</router-link>
+      <router-link :to="{ name: 'modal-accessible' }">Accessible modal</router-link>
+      <router-link :to="{ name: 'accordions' }">Accessible/InAccessisble accordions</router-link>
     </nav>
     <router-view />
     <portal-target name="modal">
