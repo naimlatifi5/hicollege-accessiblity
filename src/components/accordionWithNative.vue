@@ -2,7 +2,7 @@
   <div class="accordion-item" :class="{ 'accordion-item--expanded': expanded }">
     <h4>
       <button
-        :aria-expanded="`${isExpanded}`"
+        :aria-expanded="`${expanded}`"
         @click="toggleAccordion"
         type="button"
         class="accordion-item__heading-wrapper"

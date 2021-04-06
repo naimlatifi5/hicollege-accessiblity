@@ -53,42 +53,27 @@
     <br />
 
     <Modal v-if="active" title="Cookie modal" @onClose="handleClose" />
-    <ModalAccessible
-      v-if="active2"
-      title="Cookie modal 2"
-      @onClose="handleClose"
-    />
   </div>
 </template>
 
 <script>
 import Modal from '../components/modal.vue'
-import ModalAccessible from '../components/accessibleModal'
 export default {
   name: 'Page4',
   components: {
-    Modal,
-    ModalAccessible
+    Modal
   },
   data () {
     return {
-      active: false,
-      active2: false
+      active: false
     }
   },
   mounted () {
     this.active = true
   },
   methods: {
-    openModal () {
-      this.active = true
-    },
-    openModalAccessible () {
-      this.active2 = true
-    },
     handleClose () {
       this.active = false
-      this.active2 = false
     }
   }
 }
