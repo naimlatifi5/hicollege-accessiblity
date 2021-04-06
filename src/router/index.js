@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Page1 from '../Views/Page1'
+import Page1 from '../Views/Page11'
 import Page2 from '../Views/Page2'
 import Page3 from '../Views/Page3'
 import InacessibleModal from '../Views/Page4'
