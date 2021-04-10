@@ -1,6 +1,6 @@
 <template>
   <section aria-labelledby="todos-label">
-    <h1 id="todos-label">My to-do list</h1>
+    <h1 id="todos-label">My to-do list (inaccessible)</h1>
       <input
         id="add-todo"
         v-model="newTask"

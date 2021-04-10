@@ -7,6 +7,7 @@
       <router-link :to="{ name: 'modal-inaccessible' }">Inaccessible modals</router-link>
       <router-link :to="{ name: 'modal-accessible' }">Accessible modal</router-link>
       <router-link :to="{ name: 'accordions' }">Accessible/InAccessisble accordions</router-link>
+      <router-link :to="{ name: 'todolist' }">Todolist</router-link>
     </nav>
     <router-view />
     <portal-target name="modal">

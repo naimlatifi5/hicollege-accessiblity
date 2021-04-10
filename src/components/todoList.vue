@@ -1,6 +1,6 @@
 <template>
   <section aria-labelledby="todos-label">
-    <h1 id="todos-label">My to-do list</h1>
+    <h1 id="todos-label">My to-do list (accessible)</h1>
     <form @submit.prevent="addTodods">
       <label for="add-todo" class="visually-hidden">Add a to-do item</label>
       <input

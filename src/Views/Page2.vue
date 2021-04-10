@@ -7,30 +7,32 @@
    <div class="my-button" @click="btnClicked">Hello button</div>
     <br/>
     <div class="ui form">
+
+      <div class="my-button" @click="btnClicked">Hello button</div>
       <div class="field">
         <div>Email: </div>
         <div class="custom-input password">
           <span>enter your password</span>
         </div>
-     </div>
-     <div class="field">
-       <div>Password: </div>
-       <div class="custom-input password">
-         <span>enter your password</span>
-       </div>
-     </div>
-
-     <div class="field">
-      <div class="dropdown" @click="toggleDropdown">
-          <label data-value="">{{optionSelected}}</label>
-          <ul v-if="dropdownActive">
-            <li data-value="1">Admin</li>
-            <li data-value="2">Developer</li>
-          </ul>
       </div>
-     </div>
+      <div class="field">
+        <div class="dropdown" @click="toggleDropdown">
+            <label data-value="">{{optionSelected}}</label>
+            <ul v-if="dropdownActive">
+              <li data-value="1">Admin</li>
+              <li data-value="2">Developer</li>
+            </ul>
+        </div>
+      </div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/">About us</a>
+      </div>
+       <div class="checkbox" :class="{'checked': checked}" @click="clickedCheckbox">
+        Fruit
+      </div>
+
   </div>
-  <br>
   <h4>Navigation</h4>
   <div class="nav">
       <a href="/">Home</a>
@@ -43,12 +45,10 @@
         Fruit
       </div>
     </div>
-    <to-do-list-not-accessible></to-do-list-not-accessible>
   </div>
 </template>
 
 <script>
-import toDoListNotAccessible from '../components/todoList.vue'
 export default {
   name: 'Page2',
   data () {
@@ -59,9 +59,6 @@ export default {
       dropdownActive: false,
       optionSelected: 'User type:'
     }
-  },
-  components: {
-    toDoListNotAccessible
   },
   computed: {
     swithState () {

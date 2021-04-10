@@ -51,9 +51,6 @@
    </form>
    <br/>
    <hr>
-   <to-do-list></to-do-list>
-   <br/>
-   <br/>
    <div id="currentValue">Current value {{ value }}</div>
    <div class="calc" aria-describedby="help" tabindex="0" aria-labelledby="currentValue" >
      <button tabindex="-1" title="increment by 1" aria-controls="number" @click="increment">Increment</button>
@@ -67,7 +64,6 @@
 </template>
 
 <script>
-import toDoList from '../components/todoList.vue'
 export default {
   name: 'Page3',
   data () {
@@ -75,9 +71,6 @@ export default {
       switch: false,
       value: 0
     }
-  },
-  components: {
-    toDoList
   },
   methods: {
     btnClicked () {
