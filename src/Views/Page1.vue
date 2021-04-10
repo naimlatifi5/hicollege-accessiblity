@@ -4,9 +4,11 @@
     <input type="text"/>
     <hr>
     <h1>Button element</h1>
-    <button type="button">Button 1 position as first</button>
-    <button type="button">Button 2 focus in element order in DOM</button>
-    <button type="button">Button 3 position as third</button>
+
+    <button type="button" @click="clickMe">Button 1 </button>
+
+    <button type="button">Button 2 </button>
+    <button type="button">Button 3 </button>
     <h1>Select dropddown</h1>
     <select>
         <option value="value1">Fruit</option>
@@ -15,22 +17,30 @@
         <option value="value2">Orange</option>
     </select>
     <h2>Checkbox</h2>
-    <input type="checkbox"> Fruit
-    <input type="checkbox"> Banana
-    <hr>
+    <input type="checkbox"> Fruit not in label
+    <input type="checkbox"> Banana not in label
+    <br/>
+    <br/>
     <label for="checkbox-fruit">
         <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit"/>
-    Banana
+    Banana inside label
     </label>
     <label for="checkbox-fruit1">
         <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit1" />
-        Fruit
+        Fruit inside label
     </label>
     <hr>
-
     <h2>Radio buttons</h2>
     <input type="radio" name="item">Item 1
     <input type="radio" name="item">Item 2
+    <br/>
+    <br/>
+    <label for="item1">
+        <input type="radio" name="item1" id="item1">Item 1 inside label
+    </label>
+    <label for="item2">
+        <input type="radio" name="item1" id="item2">Item 2 inside label
+    </label>
     <h2>Not focusable elements- are by design</h2>
     <div>
         <h2>Some heading</h2>
