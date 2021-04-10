@@ -22,14 +22,12 @@
      </div>
      <div class="field">
        <label for="userType">User Type: </label>
-       <select name="user_type" value="">
-         <option disabled value="">Choose user type</option>
+       <select name="user_type" value="">s
          <option value="admin">Admin</option>
-         <option value="user">User</option>
+         <option value="user">Developer</option>
        </select>
      </div>
-     <button class="ui primary button">Submit</button>
-     <br>
+     <h4>Navigation</h4>
      <!-- USING HTML 5 -->
      <nav>
         <ul>

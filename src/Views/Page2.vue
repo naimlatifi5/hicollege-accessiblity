@@ -6,33 +6,40 @@
     <br/>
    <div class="my-button" @click="btnClicked">Hello button</div>
     <br/>
-       <div class="ui form">
+    <div class="ui form">
       <div class="field">
-        <label>Email: </label>
-        <input type="text" id="email" placeholder="enter your email" />
+        <div>Email: </div>
+        <div class="custom-input password">
+          <span>enter your password</span>
+        </div>
      </div>
      <div class="field">
-       <label>Password: </label>
-       <input type="password" id="password" placeholder="enter your password" />
+       <div>Password: </div>
+       <div class="custom-input password">
+         <span>enter your password</span>
+       </div>
      </div>
+
      <div class="field">
-       <label>User Type: </label>
-       <select name="user_type" value="">
-         <option disabled value="">Choose user type</option>
-         <option value="admin">Admin</option>
-         <option value="user">User</option>
-       </select>
+      <div class="dropdown" @click="toggleDropdown">
+          <label data-value="">{{optionSelected}}</label>
+          <ul v-if="dropdownActive">
+            <li data-value="1">Admin</li>
+            <li data-value="2">Developer</li>
+          </ul>
+      </div>
      </div>
-     <button class="ui primary button">Submit</button>
   </div>
   <br>
-  <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/">About us</a></li>
-  </ul>
+  <h4>Navigation</h4>
+  <div class="nav">
+      <a href="/">Home</a>
+      <br/>
+      <a href="/">About us</a>
+  </div>
     <div class="checkbox-wrapper">
       <h2>Custom checkboxes</h2>
-      <div class="checkbox" tabindex="0" :class="{'checked': checked}" @click="clickedCheckbox">
+      <div class="checkbox" :class="{'checked': checked}" @click="clickedCheckbox">
         Fruit
       </div>
     </div>
@@ -48,7 +55,9 @@ export default {
     return {
       switch: false,
       checked: false,
-      checked1: false
+      checked1: false,
+      dropdownActive: false,
+      optionSelected: 'User type:'
     }
   },
   components: {
@@ -65,6 +74,10 @@ export default {
     },
     clickedCheckbox () {
       this.checked = !this.checked
+    },
+    toggleDropdown (e) {
+      this.optionSelected = e.target.innerText
+      this.dropdownActive = !this.dropdownActive
     }
   }
 }
@@ -161,5 +174,60 @@ ul {
   position: absolute;
   left: 5px;
   top: 5px;
+}
+
+.dropdown {
+  margin: 0px auto;
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 400px;
+}
+
+.dropdown label {
+  display: block;
+  padding: 8px 16px;
+  background: White;
+  color: black;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.dropdown ul {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+}
+
+.dropdown ul li {
+  padding: 0px 16px;
+  background: #DDD;
+  color: #343838;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+  height: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: height 0.1s linear 0s;
+}
+
+.dropdown ul li:hover,
+.dropdown ul li.selected {
+  background: #00B4CC;
+  color: #FAFAFA;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover ul li {
+  padding: 8px 16px;
+  height: 34px;
+}
+.custom-input {
+    padding: .67857143em 1em;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid rgba(34,36,38,.15);
+    text-align: left;
+    color: #2c3e50 ;
 }
 </style>
