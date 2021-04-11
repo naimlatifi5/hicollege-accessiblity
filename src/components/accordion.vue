@@ -5,7 +5,7 @@
     :class="{ 'accordion-item--expanded': expanded }"
     role="button"
     :aria-expanded="`${expanded}`"
-    @click="toggleAccordion"  
+    @click="toggleAccordion"
     @keyup.enter="toggleAccordion"
     @keyup.space="toggleAccordion"
   >
