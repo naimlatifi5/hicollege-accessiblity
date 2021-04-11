@@ -5,9 +5,9 @@
     :class="{ 'accordion-item--expanded': expanded }"
     role="button"
     :aria-expanded="`${expanded}`"
-    @click="toggleAccordion"
+    @click="toggleAccordion"  
     @keyup.enter="toggleAccordion"
-    @keyup.enter.space="toggleAccordion"
+    @keyup.space="toggleAccordion"
   >
     <h4>
       <div class="accordion-item__heading-wrapper">
