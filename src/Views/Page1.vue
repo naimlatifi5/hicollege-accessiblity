@@ -1,7 +1,8 @@
 <template>
 <main class="main">
     <h1>Input element</h1>
-    <input type="text"/>
+    <label for="name">Name:</label>
+    <input id="name" type="text"/>
     <hr>
     <h1>Button element</h1>
 

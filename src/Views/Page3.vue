@@ -1,89 +1,140 @@
 <template>
   <div class="ui container">
     <header>
-        <h1> Accessible custom components </h1>
-   </header>
-   <main>
-      <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" alt="a cute dog, saying hello" />
-      <br/>
-      <div tabindex="0" role="button" class="my-button" @click="btnClicked" aria-label="custom button">
+      <h1>Accessible custom components</h1>
+    </header>
+    <main>
+      <img
+        src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif"
+        alt="a cute dog, saying hello"
+      />
+      <br />
+
+      <!-- custom button -->
+      <div
+        tabindex="0"
+        role="button"
+        class="my-button"
+        @click="btnClicked"
+        aria-label="custom button"
+      >
         <span aria-hidden="true">Accessible button</span>
       </div>
-    <br/>
-    <h3>Forms</h3>
-     <form class="ui form">
-      <div class="field">
-        <label for="email">Email: </label>
-        <input type="email" id="email" placeholder="enter your email" />
-     </div>
-     <div class="field">
-       <label for="password">Password: </label>
-       <input type="password" id="password" placeholder="enter your password" />
-     </div>
-     <div class="field">
-       <label for="userType">User Type: </label>
-       <select name="user_type" value="">s
-         <option value="admin">Admin</option>
-         <option value="user">Developer</option>
-       </select>
-     </div>
-     <h4>Navigation</h4>
-     <!-- USING HTML 5 -->
-     <nav>
-        <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">About us</a></li>
-      </ul>
-     </nav>
-     <!-- Using roles -->
-     <ul role="navigation">
-       <li><a href="/">Home</a></li>
-       <li><a href="/">About us</a></li>
-     </ul>
-    <div class="checkbox-wrapper">
-      <h2>Custom checkboxes</h2>
-      <div class="checkbox" tabindex="0" role="checkbox" aria-checked="true" checked aria-labelledby="fruit">
-        <span id="fruit">Fruit</span>
+      <br />
+      <br />
+      <!-- Error alert -->
+      <div class="error" tabindex="0" role="alert">
+        Cannot connect to internet
       </div>
-    </div>
-    <br/>
-    <div class="error" tabindex="0" role="alert">Cannot connect to internet</div>
-   </form>
-   <br/>
-   <hr>
-   <div id="currentValue">Current value {{ value }}</div>
-   <div class="calc" aria-describedby="help" tabindex="0" aria-labelledby="currentValue" >
-     <button tabindex="-1" title="increment by 1" aria-controls="number" @click="increment">Increment</button>
-     <button tabindex="-1" title="decrement by 1" aria-controls="number" @click="decrement">Decrement</button>
-   </div>
-   <div id="help">
-     Use increment and decrement button to increment/decrement a number
-   </div>
-   </main>
+
+      <br />
+      <h3>Forms</h3>
+      <form class="ui form">
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="enter your email" />
+        </div>
+        <div class="field">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="enter your password"
+          />
+        </div>
+        <div class="field">
+          <label for="userType">User Type:</label>
+          <select name="user_type" value="">
+            s
+            <option value="admin">Admin</option>
+            <option value="user">Developer</option>
+          </select>
+        </div>
+        <h4>Navigation</h4>
+        <!-- USING HTML 5 -->
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About us</a></li>
+          </ul>
+        </nav>
+        <!-- Using roles -->
+        <ul role="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About us</a></li>
+        </ul>
+        <div class="checkbox-wrapper">
+          <h2>Custom checkboxes</h2>
+          <div
+            class="checkbox"
+            tabindex="0"
+            role="checkbox"
+            aria-checked="true"
+            checked
+            aria-labelledby="fruit"
+          >
+            <span id="fruit">Fruit</span>
+          </div>
+        </div>
+        <br />
+        <div class="error" tabindex="0" role="alert">
+          Cannot connect to internet
+        </div>
+      </form>
+      <br />
+      <hr />
+      <div id="currentValue">Current value {{ value }}</div>
+      <div
+        class="calc"
+        aria-describedby="help"
+        tabindex="0"
+        aria-labelledby="currentValue"
+      >
+        <button
+          tabindex="0"
+          title="increment by 1"
+          aria-controls="number"
+          @click="increment"
+        >
+          Increment
+        </button>
+        <button
+          tabindex="0"
+          title="decrement by 1"
+          aria-controls="number"
+          @click="decrement"
+        >
+          Decrement
+        </button>
+      </div>
+      <div id="help">
+        Use increment and decrement button to increment/decrement a number
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Page3',
-  data () {
+  data() {
     return {
       switch: false,
-      value: 0
+      value: 0,
     }
   },
   methods: {
-    btnClicked () {
+    btnClicked() {
       alert('Button clicked')
       this.pressed = true
     },
-    increment () {
+    increment() {
       this.value++
     },
-    decrement () {
+    decrement() {
       this.value--
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -158,7 +209,7 @@ ul {
 }
 
 .checkbox:focus::before {
-  outline: #2196F3 auto 5px;
+  outline: #2196f3 auto 5px;
 }
 
 .checkbox[checked]::after {

@@ -37,9 +37,11 @@ export default {
   },
   methods: {
     addTodods () {
-      this.todos.push({ item: this.newTask })
-      this.newTask = ''
-      this.addToFeedback(this.newTask)
+      if (this.newTask !== '') {
+        this.todos.push({ item: this.newTask })
+        this.newTask = ''
+        this.addToFeedback(this.newTask)
+      }
     },
     addToFeedback (item) {
       let feedback = this.$refs.feedback
