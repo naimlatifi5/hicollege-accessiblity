@@ -4,31 +4,38 @@
       <router-link :to="{ name: 'page1' }">Native elements</router-link>
       <router-link :to="{ name: 'page2' }">Inaccessible components</router-link>
       <router-link :to="{ name: 'page3' }">Accessible components</router-link>
-      <router-link :to="{ name: 'modal-inaccessible' }">Inaccessible modals</router-link>
-      <router-link :to="{ name: 'modal-accessible' }">Accessible modal</router-link>
+      <router-link :to="{ name: 'modal-inaccessible' }">
+        Inaccessible modals
+      </router-link>
+      <router-link :to="{ name: 'modal-accessible' }">
+        Accessible modal
+      </router-link>
       <router-link :to="{ name: 'accordions' }">Accordions</router-link>
       <router-link :to="{ name: 'todolist' }">Todolist</router-link>
     </nav>
     <router-view />
-    <portal-target name="modal">
-    </portal-target>
+    <portal-target name="modal"></portal-target>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js PWA-test'
+      msg: 'Welcome to Your Vue.js PWA-test',
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
+fieldset {
+  border: none;
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
