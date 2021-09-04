@@ -1,47 +1,46 @@
 <template>
   <div class="ui container">
     <h1>Custom components</h1>
-      <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
+    <!-- Remove example for alt text and turn on the voiceOver to see the diff with alt text and without -->
     <img src="https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif" />
-    <br/>
-   <div class="my-button" @click="btnClicked">Hello button</div>
-    <br/>
+    <br />
+    <div class="my-button" @click="btnClicked">Hello button</div>
+    <br />
     <div class="ui form">
-
       <div class="my-button" @click="btnClicked">Hello button</div>
       <div class="field">
-        <div>Email: </div>
+        <div>Email:</div>
         <div class="custom-input password">
           <span>enter your password</span>
         </div>
       </div>
       <div class="field">
         <div class="dropdown" @click="toggleDropdown">
-            <label data-value="">{{optionSelected}}</label>
-            <ul v-if="dropdownActive">
-              <li data-value="1">Admin</li>
-              <li data-value="2">Developer</li>
-            </ul>
+          <label data-value="">{{ optionSelected }}</label>
+          <ul v-if="dropdownActive">
+            <li data-value="1">Admin</li>
+            <li data-value="2">Developer</li>
+          </ul>
         </div>
       </div>
       <div class="nav">
         <a href="/">Home</a>
         <a href="/">About us</a>
       </div>
-       <div class="checkbox" :class="{'checked': checked}" @click="clickedCheckbox">
-        Fruit
-      </div>
-
-  </div>
-  <h4>Navigation</h4>
-  <div class="nav">
+    </div>
+    <h4>Navigation</h4>
+    <div class="nav">
       <a href="/">Home</a>
-      <br/>
+      <br />
       <a href="/">About us</a>
-  </div>
+    </div>
     <div class="checkbox-wrapper">
       <h2>Custom checkboxes</h2>
-      <div class="checkbox" :class="{'checked': checked}" @click="clickedCheckbox">
+      <div
+        class="checkbox"
+        :class="{ checked: checked }"
+        @click="clickedCheckbox"
+      >
         Fruit
       </div>
     </div>
@@ -51,32 +50,32 @@
 <script>
 export default {
   name: 'Page2',
-  data () {
+  data() {
     return {
       switch: false,
       checked: false,
       checked1: false,
       dropdownActive: false,
-      optionSelected: 'User type:'
+      optionSelected: 'User type:',
     }
   },
   computed: {
-    swithState () {
+    swithState() {
       return this.switch ? 'checkbox-on' : 'checkbox-off'
-    }
+    },
   },
   methods: {
-    btnClicked () {
+    btnClicked() {
       alert('Button clicked')
     },
-    clickedCheckbox () {
+    clickedCheckbox() {
       this.checked = !this.checked
     },
-    toggleDropdown (e) {
+    toggleDropdown(e) {
       this.optionSelected = e.target.innerText
       this.dropdownActive = !this.dropdownActive
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -156,12 +155,12 @@ ul {
 }
 
 .checkbox:focus::before {
-  outline: #2196F3 auto 5px;
+  outline: #2196f3 auto 5px;
 }
 
 .checkbox[checked]::after,
 .checkbox.checked::after,
-.checkbox.checked1::after  {
+.checkbox.checked1::after {
   content: '';
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAaElEQVR4Xl3PIQoCQQCF4Y8JW42D1bDZ4iVEjDbxFpstYhC7eIVBZHkXFGw734sv/TqDQQ8Xb1udja/I8igeIm7Aygj2IpoKTGZnVRNxAHYi4iPiDlA9xX+aNQDFySziqDN6uSp6y7ofEMwZ05uUZRkAAAAASUVORK5CYII=);
   background-size: 100% 100%;
@@ -199,7 +198,7 @@ ul {
 
 .dropdown ul li {
   padding: 0px 16px;
-  background: #DDD;
+  background: #ddd;
   color: #343838;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
   height: 0px;
@@ -210,8 +209,8 @@ ul {
 
 .dropdown ul li:hover,
 .dropdown ul li.selected {
-  background: #00B4CC;
-  color: #FAFAFA;
+  background: #00b4cc;
+  color: #fafafa;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -220,11 +219,11 @@ ul {
   height: 34px;
 }
 .custom-input {
-    padding: .67857143em 1em;
-    font-size: 1em;
-    background: #fff;
-    border: 1px solid rgba(34,36,38,.15);
-    text-align: left;
-    color: #2c3e50 ;
+  padding: 0.67857143em 1em;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  text-align: left;
+  color: #2c3e50;
 }
 </style>
