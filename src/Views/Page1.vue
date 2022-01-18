@@ -19,16 +19,6 @@
       <option value="value2">Orange</option>
     </select>
     <h2>Checkbox</h2>
-
-    <label for="fruit">
-      <input id="fruit" type="checkbox" />
-      Fruit not in label
-    </label>
-    <label for="banana">
-      <input id="banana" type="checkbox" />
-
-      Banana not in label
-    </label>
     <br />
     <br />
     <fieldset>
