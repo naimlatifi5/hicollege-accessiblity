@@ -19,37 +19,20 @@
       <option value="value2">Orange</option>
     </select>
     <h2>Checkbox</h2>
-    <br />
-    <br />
     <fieldset>
       <legend>
         <label for="checkbox-fruit">
           <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit" />
-          Banana inside label
+          Banana
         </label>
         <label for="checkbox-fruit1">
           <input type="checkbox" name="checkbox-fruit" id="checkbox-fruit1" />
-          Fruit inside label
+          Fruit
         </label>
       </legend>
     </fieldset>
     <hr />
-    <fieldset>
-      <legend>
-        <label id="radio">
-          <input type="radio" name="item" />
-          Item 1
-        </label>
-        <label id="radio1">
-          <input type="radio" name="item" />
-          Item 2
-        </label>
-      </legend>
-    </fieldset>
     <h2>Radio buttons</h2>
-
-    <br />
-    <br />
     <fieldset>
       <legend>
         <label for="item1">
