@@ -11,7 +11,7 @@
   >
     <h4>
       <div class="accordion-item__heading-wrapper">
-        <span class="accordion-item__heading">Why I cannot choose halebop</span>
+        <span class="accordion-item__heading">What is the mac address?</span>
         <span class="accordion-item__icon" :style="rotateArrow">
           <svg
             data-v-5728faa5=""

@@ -77,9 +77,6 @@
           </div>
         </div>
         <br />
-        <div class="error" tabindex="0" role="alert">
-          Cannot connect to internet
-        </div>
       </form>
       <br />
       <hr />
@@ -117,24 +114,24 @@
 <script>
 export default {
   name: 'Page3',
-  data() {
+  data () {
     return {
       switch: false,
-      value: 0,
+      value: 0
     }
   },
   methods: {
-    btnClicked() {
+    btnClicked () {
       alert('Button clicked')
       this.pressed = true
     },
-    increment() {
+    increment () {
       this.value++
     },
-    decrement() {
+    decrement () {
       this.value--
-    },
-  },
+    }
+  }
 }
 </script>
 
