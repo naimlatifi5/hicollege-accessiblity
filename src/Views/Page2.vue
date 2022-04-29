@@ -50,32 +50,32 @@
 <script>
 export default {
   name: 'Page2',
-  data() {
+  data () {
     return {
       switch: false,
       checked: false,
       checked1: false,
       dropdownActive: false,
-      optionSelected: 'User type:',
+      optionSelected: 'User type:'
     }
   },
   computed: {
-    swithState() {
+    swithState () {
       return this.switch ? 'checkbox-on' : 'checkbox-off'
-    },
+    }
   },
   methods: {
-    btnClicked() {
+    btnClicked () {
       alert('Button clicked')
     },
-    clickedCheckbox() {
+    clickedCheckbox () {
       this.checked = !this.checked
     },
-    toggleDropdown(e) {
+    toggleDropdown (e) {
       this.optionSelected = e.target.innerText
       this.dropdownActive = !this.dropdownActive
-    },
-  },
+    }
+  }
 }
 </script>
 

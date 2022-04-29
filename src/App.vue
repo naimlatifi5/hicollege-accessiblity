@@ -12,6 +12,7 @@
       </router-link>
       <router-link :to="{ name: 'accordions' }">Accordions</router-link>
       <router-link :to="{ name: 'todolist' }">Todolist</router-link>
+      <router-link :to="{ name: 'tabs' }">Tabs</router-link>
     </nav>
     <router-view />
     <portal-target name="modal"></portal-target>
@@ -21,11 +22,11 @@
 <script>
 export default {
   name: 'App',
-  data() {
+  data () {
     return {
-      msg: 'Welcome to Your Vue.js PWA-test',
+      msg: 'Welcome to Your Vue.js PWA-test'
     }
-  },
+  }
 }
 </script>
 

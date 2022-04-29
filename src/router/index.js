@@ -7,6 +7,7 @@ import InacessibleModal from '../Views/Page4'
 import Accordions from '../Views/Page5'
 import AcessibleModal from '../Views/Page6'
 import ToDoList from '../Views/Page7'
+import TabsPage from '../Views/Page8'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/to-do-list',
       name: 'todolist',
       component: ToDoList
+    },
+    {
+      path: '/tabs',
+      name: 'tabs',
+      component: TabsPage
     }
   ]
 })
