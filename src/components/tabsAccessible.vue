@@ -1,6 +1,11 @@
 <template>
   <div class="tabs">
-    <div role="tablist" aria-label="Tab items" class="tabs__nav">
+    <div
+      role="tablist"
+      @keydown="handleKeyDownTabs"
+      aria-label="Some sample tabs"
+      class="tabs__nav"
+    >
       <button
         v-for="(tab, index) in tabs"
         :key="index"
@@ -11,7 +16,7 @@
         :aria-controls="`control-tab-${index + 1}`"
         :aria-selected="index === active ? true : false"
         :class="index === active ? 'tabs__nav_tab--active' : ''"
-        @click="activate(index)"
+        @click="changeTabs(index)"
       >
         Tab {{ index + 1 }}
       </button>
@@ -19,6 +24,7 @@
     <div
       class="tabs__content"
       role="tabpanel"
+      tabindex="0"
       :id="`control-tab-${active + 1}`"
       :aria-labelledby="`tab-${active + 1}`"
     >
@@ -30,6 +36,8 @@
 <script>
 export default {
   name: 'tabs',
+  // example https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html
+  // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role
   data: function () {
     return {
       active: 0,
@@ -42,8 +50,32 @@ export default {
     },
   },
   methods: {
-    activate(index) {
+    changeTabs(index) {
       this.active = index
+    },
+    handleKeyDownTabs(e) {
+      let tabFocus = 0
+      const tabs = document.querySelectorAll('[role="tab"]')
+
+      if (e.keyCode === 39 || e.keyCode === 37) {
+        tabs[tabFocus].setAttribute('tabindex', -1)
+        if (e.keyCode === 39) {
+          tabFocus++
+          // If we're at the end, go to the start
+          if (tabFocus >= tabs.length) {
+            tabFocus = 0
+          }
+        } else if (e.keyCode === 37) {
+          tabFocus--
+          // If we're at the start, move to the end
+          if (tabFocus < 0) {
+            tabFocus = tabs.length - 1
+          }
+        }
+        //TODO check why arrow back is not working
+        tabs[tabFocus].setAttribute('tabindex', 0)
+        tabs[tabFocus].focus()
+      }
     },
   },
 }
