@@ -41,43 +41,46 @@ export default {
   data: function () {
     return {
       active: 0,
-      tabs: ['Content for tab 1!', 'Content for tab 2!', 'Content for tab 3!'],
+      tabs: ['Content for tab 1!', 'Content for tab 2!', 'Content for tab 3!']
     }
   },
   computed: {
-    content() {
+    content () {
       return this.tabs[this.active]
-    },
+    }
   },
   methods: {
-    changeTabs(index) {
+    changeTabs (index) {
       this.active = index
     },
-    handleKeyDownTabs(e) {
-      let tabFocus = 0
+    handleKeyDownTabs (e) {
       const tabs = document.querySelectorAll('[role="tab"]')
 
       if (e.keyCode === 39 || e.keyCode === 37) {
-        tabs[tabFocus].setAttribute('tabindex', -1)
+        tabs[this.active].setAttribute('tabindex', -1)
+
         if (e.keyCode === 39) {
-          tabFocus++
+          console.log('arrow clicked')
+          this.active++
+
           // If we're at the end, go to the start
-          if (tabFocus >= tabs.length) {
-            tabFocus = 0
+          if (this.active >= tabs.length) {
+            this.active = 0
           }
         } else if (e.keyCode === 37) {
-          tabFocus--
+          this.active--
+          console.log('insidei here', this.active)
           // If we're at the start, move to the end
-          if (tabFocus < 0) {
-            tabFocus = tabs.length - 1
+          if (this.active < 0) {
+            this.active = tabs.length - 1
           }
         }
-        //TODO check why arrow back is not working
-        tabs[tabFocus].setAttribute('tabindex', 0)
-        tabs[tabFocus].focus()
+        // TODO check why arrow back is not working
+        tabs[this.active].setAttribute('tabindex', 0)
+        tabs[this.active].focus()
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
