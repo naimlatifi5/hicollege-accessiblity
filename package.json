@@ -12,11 +12,14 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "lintFix": "yarn lint --fix"
+    "lintFix": "yarn lint --fix",
+    "pa11y": "pa11y https://accessibilityweb-b1764.web.app/ --runner axe --runner htmlcs"
   },
   "dependencies": {
     "@vue/runtime-dom": "^3.5.13",
     "portal-vue": "^2.1.7",
+    "sass": "^1.26.5",
+    "sass-loader": "^7.3.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
   },
@@ -65,8 +68,6 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
-    "sass": "^1.62.1",
-    "sass-loader": "^7.3.1",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
