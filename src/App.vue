@@ -13,6 +13,7 @@
       <router-link :to="{ name: 'accordions' }">Accordions</router-link>
       <router-link :to="{ name: 'todolist' }">Todolist</router-link>
       <router-link :to="{ name: 'tabs' }">Tabs</router-link>
+      <router-link :to="{ name: 'noAccessibilityPage' }">Page with accessibility issues</router-link>
     </nav>
     <router-view />
     <portal-target name="modal"></portal-target>

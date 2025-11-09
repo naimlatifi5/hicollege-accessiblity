@@ -8,7 +8,7 @@ import Accordions from '../Views/Page5'
 import AcessibleModal from '../Views/Page6'
 import ToDoList from '../Views/Page7'
 import TabsPage from '../Views/Page8'
-
+import InAccessiblePage from '../Views/Page9'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +52,11 @@ export default new Router({
       path: '/tabs',
       name: 'tabs',
       component: TabsPage
+    },
+    {
+      path: '/inaccessible-page',
+      name: 'noAccessibilityPage',
+      component: InAccessiblePage
     }
   ]
 })
