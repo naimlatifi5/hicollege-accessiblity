@@ -14,6 +14,7 @@
       <router-link :to="{ name: 'todolist' }">Todolist</router-link>
       <router-link :to="{ name: 'tabs' }">Tabs</router-link>
       <router-link :to="{ name: 'noAccessibilityPage' }">Page with accessibility issues</router-link>
+      <router-link :to="{ name: 'accessiblePage' }">Page with no accessibility issues</router-link>
     </nav>
     <router-view />
     <portal-target name="modal"></portal-target>
@@ -36,6 +37,26 @@ fieldset {
   border: none;
 }
 
+/* Global anchor styling for WCAG compliance */
+a {
+  color: #0056b3;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #003d82;
+}
+
+a:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+a:visited {
+  color: #6f42c1;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,6 +70,18 @@ nav {
     display: inline-block;
     cursor: pointer;
     padding: 10px;
+    color: #0056b3;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: #003d82;
+  }
+
+  a:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
   }
 }
 </style>

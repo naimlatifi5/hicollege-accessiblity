@@ -44,3 +44,6 @@ Incorrect heading hierarchy (h4 before h3)
 Empty list items
 Fake lists using divs instead of proper list markup
 Tabular data presented as lists
+
+
+# if not building locally run nvm use 18.17.0

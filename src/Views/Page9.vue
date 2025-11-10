@@ -4,45 +4,6 @@
     <h4>Scan the page</h4>
     <h3>Hello h3</h3>
 
-    <!-- Inaccessible unordered list #2: No semantic structure -->
-    <div style="list-style: disc; margin-left: 20px;">
-      <div>• Fake list item 1</div>
-      <div>• Fake list item 2</div>
-      <div>• Fake list item 3</div>
-    </div>
-
-    <!-- Inaccessible unordered list #3: Missing alt text and poor contrast -->
-    <ul style="color: #ccc; background: #ddd;">
-      <li><img src="nonexistent.jpg" width="20" height="20"> Item with image</li>
-      <li style="color: #ddd;">Very low contrast item</li>
-      <li><a href="#" style="color: #ccc;">Link with poor contrast</a></li>
-    </ul>
-
-    <!-- Inaccessible unordered list #4: Nested without proper structure -->
-    <ul>
-      <li>Parent item 1
-        <div>
-          <span>• Child item (not in proper list)</span>
-          <span>• Another child (not in proper list)</span>
-        </div>
-      </li>
-      <li>Parent item 2</li>
-    </ul>
-
-    <!-- Inaccessible unordered list #5: Interactive elements without proper ARIA -->
-    <ul>
-      <li onclick="alert('clicked')" style="cursor: pointer;">Clickable item without button semantics</li>
-      <li><input type="checkbox"> Checkbox without label</li>
-      <li><select><option>Option 1</option><option>Option 2</option></select></li>
-    </ul>
-
-    <!-- Inaccessible unordered list #6: Missing list semantics -->
-    <div role="presentation">
-      <p>Item A</p>
-      <p>Item B</p>
-      <p>Item C</p>
-    </div>
-
     <!-- Inaccessible unordered list #7: Table data presented as list -->
     <ul>
       <li>Name | Age | City</li>
