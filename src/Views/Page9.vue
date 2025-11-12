@@ -38,7 +38,7 @@
       </li>
     </ul>
 
-    <!-- Inaccessible unordered list #10: Links without context -->
+    <!-- Not proper navigation with contextual links -->
     <ul class="low-contrast">
       <li><a href="#">Click here</a></li>
       <li><a href="#">Read more</a></li>
@@ -52,7 +52,7 @@
     <!-- Form without proper labels and structure -->
     <form>
       <input type="text" placeholder="First Name"> <!-- No label, placeholder only -->
-      <input type="text" title="Last Name"> <!-- No label, title only -->
+      <input type="text"> <!-- No label, title only -->
       Email: <input type="email"> <!-- Visual label only, not programmatically associated -->
 
       <!-- Radio buttons without proper grouping -->
@@ -68,10 +68,6 @@
         <option value="us">USA</option>
         <option value="uk">UK</option>
       </select>
-
-      <!-- Button without accessible text -->
-      <button type="submit"></button>
-      <input type="submit" value="">
     </form>
 
     <!-- BUTTONS AND INTERACTIVE ELEMENTS -->
@@ -91,24 +87,14 @@
          @click="handleImageClick"
          style="cursor: pointer;">
 
-    <!-- Button with only icon, no text -->
-    <button>
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='M10 2l8 8-8 8-2-2 6-6-6-6z'/%3E%3C/svg%3E">
-    </button>
-
     <!-- IMAGES WITH ACCESSIBILITY ISSUES -->
     <h2>Inaccessible Images</h2>
-
     <!-- Decorative image with alt text (should be empty) -->
     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50'%3E%3Crect width='100' height='50' fill='%23f0f0f0'/%3E%3C/svg%3E"
          alt="Decorative border pattern">
 
     <!-- Informative image without alt text -->
     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50'%3E%3Crect width='100' height='50' fill='red'/%3E%3Ctext x='50' y='30' text-anchor='middle' fill='white'%3EERROR%3C/text%3E%3C/svg%3E">
-
-    <!-- Complex image with insufficient alt text -->
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect width='200' height='100' fill='%23e0e0e0'/%3E%3Ctext x='100' y='30' text-anchor='middle'%3ESales Chart%3C/text%3E%3Crect x='20' y='40' width='20' height='40' fill='blue'/%3E%3Crect x='50' y='30' width='20' height='50' fill='red'/%3E%3Crect x='80' y='20' width='20' height='60' fill='green'/%3E%3C/svg%3E"
-         alt="chart">
 
     <!-- TABLES WITH ACCESSIBILITY ISSUES -->
     <h2>Inaccessible Tables</h2>
@@ -157,7 +143,7 @@
       </tr>
     </table>
 
-    <!-- NAVIGATION AND LINKS -->
+    <!-- INACCESSIBLE NAVIGATION AND LINKS -->
     <h2>Inaccessible Navigation and Links</h2>
 
     <!-- Navigation without proper structure -->

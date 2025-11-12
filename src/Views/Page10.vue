@@ -210,15 +210,6 @@
       <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50'%3E%3Crect width='100' height='50' fill='red'/%3E%3Ctext x='50' y='30' text-anchor='middle' fill='white'%3EERROR%3C/text%3E%3C/svg%3E"
            alt="Error: An error has occurred">
 
-      <!-- Complex image with detailed alt text and long description -->
-      <figure>
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect width='200' height='100' fill='%23e0e0e0'/%3E%3Ctext x='100' y='30' text-anchor='middle'%3ESales Chart%3C/text%3E%3Crect x='20' y='40' width='20' height='40' fill='blue'/%3E%3Crect x='50' y='30' width='20' height='50' fill='red'/%3E%3Crect x='80' y='20' width='20' height='60' fill='green'/%3E%3C/svg%3E"
-             alt="Sales chart showing quarterly performance. Q1: $100k (blue), Q2: $120k (red), Q3: $110k (green)"
-             aria-describedby="chart-description">
-        <figcaption id="chart-description">
-          This chart displays quarterly sales data for the current year. Q1 shows $100,000 in sales (represented in blue), Q2 achieved $120,000 (red), and Q3 resulted in $110,000 (green). The trend shows strong performance in Q2 with a slight decline in Q3.
-        </figcaption>
-      </figure>
     </section>
 
     <!-- ACCESSIBLE TABLES -->
@@ -604,6 +595,13 @@ a:focus,
   outline-offset: 2px;
 }
 
+/* General anchor styling */
+a {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
 /* Section spacing */
 section {
   margin-bottom: 3rem;
@@ -617,6 +615,7 @@ h1 {
   color: #1a1a1a;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  background-color: #ffffff;
 }
 
 h2 {
@@ -625,6 +624,9 @@ h2 {
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #e2e8f0;
   padding-bottom: 0.5rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 h3 {
@@ -687,7 +689,7 @@ input[aria-invalid="true"] {
 }
 
 .optional-indicator {
-  color: #718096;
+  color: #4a5568;
   font-weight: normal;
 }
 
@@ -704,6 +706,9 @@ input[aria-invalid="true"] {
   font-size: 0.875rem;
   color: #4a5568;
   margin-top: 0.25rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 /* Error messages */
@@ -895,6 +900,20 @@ button:hover,
   font-weight: 600;
 }
 
+/* Content links styling */
+.content-links p {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form indicators styling */
+.form-indicators p {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
 /* External link icon */
 .external-link-icon {
   margin-left: 0.25rem;
@@ -921,13 +940,13 @@ button:hover,
 .error-message {
   background-color: #fed7d7;
   border: 1px solid #feb2b2;
-  color: #c53030;
+  color: #822727;
 }
 
 .warning-message {
   background-color: #fffbeb;
   border: 1px solid #f6e05e;
-  color: #b7791f;
+  color: #744210;
 }
 
 /* Good contrast example */
@@ -961,7 +980,10 @@ figure {
 figcaption {
   margin-top: 0.5rem;
   font-size: 0.875rem;
-  color: #718096;
+  color: #4a5568;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 video,
