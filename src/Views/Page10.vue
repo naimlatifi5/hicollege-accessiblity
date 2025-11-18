@@ -45,7 +45,7 @@
       <h3 id="actions-heading">Available Actions - Proper interactive elements with buttonss</h3>
       <div class="button-group">
         <button type="button" @click="handleClick" class="primary-button">
-          Click me
+          Primary Action
         </button>
         <button type="button" @click="handleAction" class="secondary-button">
           Perform action

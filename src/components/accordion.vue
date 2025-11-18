@@ -32,12 +32,7 @@
     </h4>
     <div v-if="expanded" class="accordion-item__content-wrapper">
       <div class="accordion-item__content">
-        I am accessible with the help of WAI-ARIA attribute - Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Maecenas tincidunt aliquet
-        placerat. Donec et tellus consectetur nisi congue hendrerit vitae non
-        est. Phasellus pharetra ligula quis erat tincidunt consequat non non
-        odio. Proin pretium ullamcorper cursus. Sed leo mauris, porttitor non
-        ligula
+        I am accessible with the help of WAI-ARIA attribute
       </div>
     </div>
   </div>

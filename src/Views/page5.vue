@@ -15,27 +15,19 @@
     <br>
     <br>
     <br>
-    <br>
-    <h2>Accessible with semantic element</h2>
-    <AccordionAccessibleWithNativeElement />
-    <AccordionAccessibleWithNativeElement />
-    <br>
-    <br>
-    <br>
   </div>
 </template>
 
 <script>
 import AccordionNotAccessible from '../components/accordionNotAccessible'
 import Accordion from '../components/accordion'
-import AccordionAccessibleWithNativeElement from '../components/accordionWithNative'
+
 
 export default {
   name: 'Page5',
   components: {
     AccordionNotAccessible,
-    Accordion,
-    AccordionAccessibleWithNativeElement
+    Accordion
   }
 }
 </script>

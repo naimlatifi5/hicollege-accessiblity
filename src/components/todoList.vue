@@ -1,6 +1,6 @@
 <template>
-  <section aria-labelledby="todos-label">
-    <h1 id="todos-label">My to-do list (accessible)</h1>
+  <section aria-labelledby="todos-label-accessible">
+    <h1 id="todos-label-accessible">My to-do list (accessible)</h1>
     <form @submit.prevent="addTodods">
       <label for="add-todo" class="visually-hidden">Add a to-do item</label>
       <input
@@ -37,15 +37,24 @@ export default {
   },
   methods: {
     addTodods () {
-      if (this.newTask !== '') {
-        this.todos.push({ item: this.newTask })
-        this.newTask = ''
-        this.addToFeedback(this.newTask)
+      const taskToAdd = this.newTask.trim()
+      if (taskToAdd !== '') {
+        this.todos.push({ item: taskToAdd })
+        this.addToFeedback(taskToAdd)
+        this.newTask = '' // Clear input AFTER announcing
+      } else {
+        // Optional: Announce error for empty input
+        this.addToFeedback('Please enter a valid task')
       }
     },
     addToFeedback (item) {
       let feedback = this.$refs.feedback
       feedback.innerText = `${item} added to your to-do list`
+
+      // Clear the announcement after 3 seconds to allow for new announcements
+      setTimeout(() => {
+        feedback.innerText = ''
+      }, 3000)
     }
   }
 }
