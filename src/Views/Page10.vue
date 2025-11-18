@@ -1,16 +1,14 @@
 <template>
-      <main id="main-content">
+  <main id="main-content">
   <div class="accessible-page">
         <!-- Skip navigation for keyboard users -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <section>
-
     <!-- Fixed heading hierarchy -->
     <h1>Accessible Page Example</h1>
     <h2>Welcome to the Accessible Version</h2>
-</section>
-
-    <!-- Proper table structure for tabular data -->
+    </section>
+        <!-- Proper table structure for tabular data -->
     <section aria-labelledby="user-data-heading">
       <h3 id="user-data-heading">User Information</h3>
       <table>
@@ -44,7 +42,7 @@
 
     <!-- Proper interactive elements with buttons -->
     <section aria-labelledby="actions-heading">
-      <h3 id="actions-heading">Available Actions</h3>
+      <h3 id="actions-heading">Available Actions - Proper interactive elements with buttonss</h3>
       <div class="button-group">
         <button type="button" @click="handleClick" class="primary-button">
           Click me
@@ -59,7 +57,7 @@
 
     <!-- Proper form structure with labels -->
     <section aria-labelledby="contact-form-heading">
-      <h3 id="contact-form-heading">Contact Information</h3>
+      <h3 id="contact-form-heading">Contact Information -  Proper form structure with labels</h3>
       <div class="form-group">
         <label for="user-name">Full Name (Required)</label>
         <input type="text" id="user-name" required aria-describedby="name-help">
@@ -86,7 +84,6 @@
 
     <!-- ACCESSIBLE FORM ELEMENTS -->
     <h2>Accessible Form Example</h2>
-
     <!-- Form with proper labels and structure -->
     <form @submit.prevent="handleSubmit" novalidate>
       <fieldset>
@@ -128,23 +125,23 @@
       <fieldset>
         <legend>Gender (Optional)</legend>
         <div class="radio-group">
-          <input type="radio" id="male" name="gender" value="male" v-model="form.gender">
           <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male" v-model="form.gender">
         </div>
         <div class="radio-group">
-          <input type="radio" id="female" name="gender" value="female" v-model="form.gender">
           <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female" v-model="form.gender">
         </div>
         <div class="radio-group">
-          <input type="radio" id="other" name="gender" value="other" v-model="form.gender">
           <label for="other">Other</label>
+          <input type="radio" id="other" name="gender" value="other" v-model="form.gender">
         </div>
       </fieldset>
 
       <!-- Checkbox with proper label -->
       <div class="form-group">
+          <label for="agree">I agree to the <a href="/terms">terms and conditions</a> (Required)</label>
         <input type="checkbox" id="agree" v-model="form.agree" required>
-        <label for="agree">I agree to the <a href="/terms">terms and conditions</a> (Required)</label>
       </div>
 
       <!-- Select with proper label -->
@@ -287,9 +284,9 @@
 
       <!-- Links with proper context -->
       <div class="content-links">
-        <p>For more information about our services, <a href="/services">view our complete service list</a>.</p>
-        <p>Download the <a href="/documents/user-guide.pdf" download>user guide (PDF, 2.3MB)</a>.</p>
-        <p><a href="/accessibility-guidelines">Learn more about our accessibility guidelines</a>.</p>
+        <p>For more information about our services, <a href="/services">view our complete service list</a></p>
+        <p>Download the <a href="/documents/user-guide.pdf" download>user guide (PDF, 2.3MB)</a></p>
+        <p><a href="/accessibility-guidelines">Learn more about our accessibility guidelines</a></p>
 
         <!-- External links with proper warnings -->
         <p>Visit our partner's website:
@@ -308,37 +305,17 @@
     <section aria-labelledby="multimedia-heading">
       <h2 id="multimedia-heading">Accessible Multimedia</h2>
 
-      <!-- Video with proper controls and captions -->
+      <!-- Video with proper controls and captions - Big Buck Bunny-->
       <figure>
         <video width="300" height="200" controls aria-labelledby="video-title" aria-describedby="video-description">
-          <source src="sample-video.mp4" type="video/mp4">
-          <track kind="captions" src="video-captions.vtt" srclang="en" label="English captions" default>
-          <track kind="subtitles" src="video-subtitles.vtt" srclang="en" label="English subtitles">
-          <p>Your browser does not support the video element. <a href="sample-video.mp4" download>Download the video file</a>.</p>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          <track kind="captions" src="/static/video-captions.vtt" srclang="en" label="English captions" default>
+          <track kind="subtitles" src="/static/video-subtitles.vtt" srclang="en" label="English subtitles">
+          <p>Your browser does not support the video element. <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" download>Download the video file</a>.</p>
         </video>
         <figcaption>
-          <div id="video-title">Sample Educational Video</div>
-          <div id="video-description">This video demonstrates accessibility features. Duration: 2 minutes.</div>
-        </figcaption>
-      </figure>
-
-      <!-- Audio with proper controls and transcript -->
-      <figure>
-        <audio controls aria-labelledby="audio-title" aria-describedby="audio-description">
-          <source src="sample-audio.mp3" type="audio/mpeg">
-          <source src="sample-audio.ogg" type="audio/ogg">
-          <p>Your browser does not support the audio element. <a href="sample-audio.mp3" download>Download the audio file</a>.</p>
-        </audio>
-        <figcaption>
-          <div id="audio-title">Accessibility Podcast Episode</div>
-          <div id="audio-description">Discussion about web accessibility best practices. Duration: 5 minutes.</div>
-          <details>
-            <summary>View Transcript</summary>
-            <div class="transcript">
-              <p><strong>Speaker 1:</strong> Welcome to our accessibility podcast...</p>
-              <p><strong>Speaker 2:</strong> Today we'll discuss best practices for creating accessible web content...</p>
-            </div>
-          </details>
+          <div id="video-title">Sample Educational Video - Big Buck Bunny</div>
+          <div id="video-description">This video demonstrates accessibility features. Duration: 10 minutes.</div>
         </figcaption>
       </figure>
     </section>

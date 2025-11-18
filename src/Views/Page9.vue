@@ -4,7 +4,8 @@
     <h4>Scan the page</h4>
     <h3>Hello h3</h3>
 
-    <!-- Inaccessible unordered list #7: Table data presented as list -->
+    <!--Table data presented as list -->
+    <h2 id="user-data-heading">User Information</h2>
     <ul>
       <li>Name | Age | City</li>
       <li>John | 25 | New York</li>
@@ -12,7 +13,8 @@
       <li>Bob | 35 | Paris</li>
     </ul>
 
-    <!-- Inaccessible unordered list #8: Complex interactive content -->
+    <!-- Complex interactive content -->
+    <h2 id="actions-heading">Available Actions - Complex interactive content</h2>
     <ul>
       <li>
         <div onclick="handleClick()" tabindex="0" class="fake-button">
@@ -25,7 +27,8 @@
       <li class="visually-hidden-wrong">Hidden item that screen readers can't access</li>
     </ul>
 
-    <!-- Inaccessible unordered list #9: Form elements without proper labels -->
+    <!-- Inproper form structure without proper labels -->
+     <h2 id="contact-form-heading">Contact Information -  Inproper structure with labels</h2>
     <ul>
       <li>
         <input type="text" placeholder="Enter name (placeholder as label - bad!)">
@@ -38,7 +41,8 @@
       </li>
     </ul>
 
-    <!-- Not proper navigation with contextual links -->
+    <!-- Inproper navigation with contextual links -->
+    <h2>Inproper navigation with contextual links</h2>
     <ul class="low-contrast">
       <li><a href="#">Click here</a></li>
       <li><a href="#">Read more</a></li>
@@ -52,15 +56,18 @@
     <!-- Form without proper labels and structure -->
     <form>
       <input type="text" placeholder="First Name"> <!-- No label, placeholder only -->
-      <input type="text"> <!-- No label, title only -->
+        <br />
       Email: <input type="email"> <!-- Visual label only, not programmatically associated -->
+      <br />
 
       <!-- Radio buttons without proper grouping -->
       <input type="radio" name="gender" value="male"> Male
       <input type="radio" name="gender" value="female"> Female
+         <br />
 
       <!-- Checkbox without label -->
       <input type="checkbox" id="agree"> I agree to terms
+         <br />
 
       <!-- Select without label -->
       <select>
@@ -81,12 +88,9 @@
     <span @click="handleSpanClick" style="background: blue; color: white; padding: 5px; cursor: pointer;">
       Fake Button (span)
     </span>
-
-    <!-- Image as button without proper attributes -->
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='30'%3E%3Crect width='50' height='30' fill='red'/%3E%3Ctext x='25' y='20' text-anchor='middle' fill='white'%3EClick%3C/text%3E%3C/svg%3E"
-         @click="handleImageClick"
-         style="cursor: pointer;">
-
+    <br />
+    <br />
+    <br />
     <!-- IMAGES WITH ACCESSIBILITY ISSUES -->
     <h2>Inaccessible Images</h2>
     <!-- Decorative image with alt text (should be empty) -->
@@ -95,7 +99,8 @@
 
     <!-- Informative image without alt text -->
     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50'%3E%3Crect width='100' height='50' fill='red'/%3E%3Ctext x='50' y='30' text-anchor='middle' fill='white'%3EERROR%3C/text%3E%3C/svg%3E">
-
+    <br />
+    <br />
     <!-- TABLES WITH ACCESSIBILITY ISSUES -->
     <h2>Inaccessible Tables</h2>
 
@@ -142,7 +147,8 @@
         <td>$65k</td>
       </tr>
     </table>
-
+    <br />
+    <br />
     <!-- INACCESSIBLE NAVIGATION AND LINKS -->
     <h2>Inaccessible Navigation and Links</h2>
 
@@ -154,26 +160,21 @@
     </div>
 
     <!-- Links without context -->
-    <p>For more information about our services, <a href="#">click here</a>.</p>
-    <p>Download the document <a href="#">here</a>.</p>
-    <p><a href="#">Read more</a> about accessibility guidelines.</p>
+    <p>For more information about our services, <a href="#">click here</a></p>
+    <p>Download the document <a href="#">here</a></p>
+    <p><a href="#">Read more</a> about accessibility guidelines</p>
 
     <!-- Links that open in new window without warning -->
     <a href="https://example.com" target="_blank">External link</a>
-
+    <br />
+    <br />
     <!-- MULTIMEDIA WITHOUT ACCESSIBILITY -->
     <h2>Inaccessible Multimedia</h2>
 
     <!-- Video without controls or captions -->
     <video width="300" height="200" autoplay muted>
-      <source src="nonexistent-video.mp4" type="video/mp4">
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
     </video>
-
-    <!-- Audio without controls -->
-    <audio autoplay>
-      <source src="nonexistent-audio.mp3" type="audio/mpeg">
-    </audio>
-
     <!-- FOCUS AND KEYBOARD NAVIGATION ISSUES -->
     <h2>Focus and Keyboard Issues</h2>
 
@@ -181,14 +182,15 @@
     <div tabindex="0" onclick="alert('clicked')" style="padding: 10px; border: 1px solid gray;">
       Focusable div without keyboard support
     </div>
-
-    <!-- Skip navigation missing -->
-    <!-- No skip links provided for keyboard users -->
+    <br />
+    <br />
 
     <!-- Interactive element with positive tabindex (anti-pattern) -->
     <button tabindex="5">Button with positive tabindex</button>
     <input type="text" tabindex="10" placeholder="Input with high tabindex">
-
+    <br />
+    <br />
+    <h2>Accessible Color and Contrast</h2>
     <!-- COLOR AND CONTRAST ISSUES -->
     <h2 style="color: #888; background: #aaa;">Poor Contrast Heading</h2>
 
