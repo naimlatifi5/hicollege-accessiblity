@@ -22,7 +22,6 @@
 import AccordionNotAccessible from '../components/accordionNotAccessible'
 import Accordion from '../components/accordion'
 
-
 export default {
   name: 'Page5',
   components: {
